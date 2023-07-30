@@ -26,3 +26,4 @@ replay_pid*
 # Just for test purpose
 ADD_GITIGNORE_TEST_LINE1_Online
 ADD_GITIGNORE_TEST_LINE2_VSCode
+ADD_GITIGNORE_TEST_LINE3_Online
