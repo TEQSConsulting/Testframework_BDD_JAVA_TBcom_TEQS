@@ -23,6 +23,9 @@
 hs_err_pid*
 replay_pid*
 
+# test data files
+configuration.properties
+
 # Just for test purpose
 ADD_GITIGNORE_TEST_LINE1_Online
 ADD_GITIGNORE_TEST_LINE2_VSCode
