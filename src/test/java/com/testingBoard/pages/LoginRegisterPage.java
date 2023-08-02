@@ -8,10 +8,12 @@ import org.openqa.selenium.support.PageFactory;
 import javax.xml.xpath.XPath;
 
 public class LoginRegisterPage {
-   // public LoginRegisterPage(){
-        //PageFactory.initElements(WebDriverFactory.getDriver("Chrome"),this);
+    public LoginRegisterPage(){
+        PageFactory.initElements(WebDriverFactory.getDriver("Chrome"),this);
 
-        //  }
+          }
+
+
 
     @FindBy(xpath ="//a[contains(text(),' Login / Register')]")
     public WebElement loginRegisterButton;
