@@ -2,6 +2,7 @@ package com.testingBoard.steps_definitions;
 
 import com.testingBoard.pages.LoginRegisterPage;
 import com.testingBoard.utilities.ConfigurationReader;
+import com.testingBoard.utilities.Driver;
 import com.testingBoard.utilities.WebDriverFactory;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,13 +19,12 @@ import org.openqa.selenium.WebDriver;
 
         @Given("{string} visits the website")
         public void visits_the_website(String string) {
-            WebDriver driver = WebDriverFactory.getDriver("Chrome");
-            driver.get(ConfigurationReader.getProperty("url"));
+            Driver.getDriver(ConfigurationReader.getProperty("browser")).get(ConfigurationReader.getProperty("url"));
             loginRegisterPage.CookieAcceptButton.click();
         }
 
-        @When("\"user \"clicks Login\\/ Register button")
-        public void user_clicks_login_register_button() {
+        @When("{string} clicks Login\\/ Register button")
+        public void clicks_login_register_button(String string) {
             loginRegisterPage.loginRegisterButton.click();
         }
 
@@ -33,16 +33,25 @@ import org.openqa.selenium.WebDriver;
             loginRegisterPage.loginRegistrationHeading.isDisplayed();
         }
 
-        @Then("\"user\"enters the username and password")
-        public void user_enters_the_username_and_password() {
+        @Then("{string} enters the username and password")
+        public void enters_the_username_and_password(String string) {
+
+            if(string == "TEQS_TestUser1_Sub"){
             loginRegisterPage.inputUserName.sendKeys(ConfigurationReader.getProperty("emailSubsciber1"));
             loginRegisterPage.inputPassword.sendKeys(ConfigurationReader.getProperty("passwordSubscribers1"));
         }
+            if(string=="TEQS_TestUser2_Sub"){
+                loginRegisterPage.inputUserName.sendKeys(ConfigurationReader.getProperty("emailSubsciber2"));
+                loginRegisterPage.inputPassword.sendKeys(ConfigurationReader.getProperty("passwordSubscribers2"));
+            }else if(string =="TEQS_TestUser3_Contr ") {
+                loginRegisterPage.inputUserName.sendKeys(ConfigurationReader.getProperty("emailContributer"));
+                loginRegisterPage.inputPassword.sendKeys(ConfigurationReader.getProperty("passwordContributer"));
+            }
+        }
 
-        @Then("\"user \"clicks on AnmeldenButton")
-        public void user_clicks_on_anmelden_button() {
+        @Then("{string} clicks on AnmeldenButton")
+        public void clicks_on_anmelden_button(String string) {
             loginRegisterPage.LoginAnmeldenButton.sendKeys(Keys.ENTER);
-
         }
         @Then("Login\\/Register Button disappears")
         public void login_register_button_disappears() {
