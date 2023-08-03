@@ -16,7 +16,7 @@ public class ConfigurationReader {
             try {
 
                 //2- We need to open the file in java memory: FileInputStream
-                FileInputStream file = new FileInputStream("configuration.properties");//path
+                FileInputStream file = new FileInputStream("C:\\Users\\walid\\Testframework_BDD_JAVA_TBcom_TEQS\\target\\configuration.properties");//path
 
                 //3- Load the properties object using FileInputStream object
                 properties.load(file);

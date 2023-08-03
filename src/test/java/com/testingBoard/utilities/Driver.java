@@ -27,6 +27,8 @@ public class Driver {
      */
     public static WebDriver getDriver(String browser){
 
+        System.out.println("TEST 1");
+        System.out.println("TEST: " + browser);
         if (driverPool.get() == null){
 
             /*
@@ -40,7 +42,8 @@ public class Driver {
                 Depending on the browserType that will be return from configuration.properties file
                 switch statement will determine the case, and open the matching browser
             */
-            switch (browserType){
+            System.out.println("browserType kurz vor switch: '" + browserType + "'");
+            switch(browserType) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driverPool.set(new ChromeDriver())   ;
@@ -58,6 +61,9 @@ public class Driver {
                     driverPool.set(new EdgeDriver()) ;
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+                default:
+                    System.out.println("Es liegt ein Problem vor, denn es wurde kein passender Browser gefunden!");
                     break;
 
             }
@@ -77,4 +83,3 @@ public class Driver {
         }
     }
 }
-

@@ -1,5 +1,7 @@
 package com.testingBoard.pages;
 
+import com.testingBoard.utilities.ConfigurationReader;
+import com.testingBoard.utilities.Driver;
 import com.testingBoard.utilities.WebDriverFactory;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +11,7 @@ import javax.xml.xpath.XPath;
 
 public class LoginRegisterPage {
     public LoginRegisterPage(){
-        PageFactory.initElements(WebDriverFactory.getDriver("Chrome"),this);
+        PageFactory.initElements(Driver.getDriver(ConfigurationReader.getProperty("browser")),this);
 
           }
 
