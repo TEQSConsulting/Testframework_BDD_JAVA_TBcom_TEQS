@@ -4,14 +4,15 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class) // this is used for detereming what will run in this framework
+@RunWith(Cucumber.class) // this is used for determing what will run in this framework
 @CucumberOptions(
 
         plugin = "html:target/cucumber-report.html",
         features="src/test/resources/features",
-        glue = "src/test/java/com/testingBoard/steps_definitions",
+        glue = "com/testingBoard/steps_definitions",
         dryRun = false,
-        tags = ""
+
+        tags = "@wip"
 
 )
 public class CukesRunner{
