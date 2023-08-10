@@ -25,7 +25,7 @@ public class TestingBoardStepDefinitions {
 
             String tempurl = ConfigurationReader.getProperty("url");
             System.out.println("tempurl: " + tempurl);
-            Driver.getDriver(ConfigurationReader.getProperty("browser")).get(tempurl);
+            Driver.getDriver().get(tempurl);
             Thread.sleep(4000);
             loginRegisterPage.CookieAcceptButton.click();
         }
@@ -75,7 +75,7 @@ public class TestingBoardStepDefinitions {
 
             String tempurl = ConfigurationReader.getProperty("url");
             System.out.println("tempurl: " + tempurl);
-            Driver.getDriver(ConfigurationReader.getProperty("browser")).get(tempurl);
+            Driver.getDriver().get(tempurl);
             Thread.sleep(4000);
             loginRegisterPage.CookieAcceptButton.click();
         }

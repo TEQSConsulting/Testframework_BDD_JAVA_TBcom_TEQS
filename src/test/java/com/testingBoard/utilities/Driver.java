@@ -25,10 +25,8 @@ public class Driver {
     /*
     Create a re-usable utility method which will return same driver instance when we call it
      */
-    public static WebDriver getDriver(String browser){
+    public static WebDriver getDriver(){
 
-        System.out.println("TEST 1");
-        System.out.println("TEST: " + browser);
         if (driverPool.get() == null){
 
             /*

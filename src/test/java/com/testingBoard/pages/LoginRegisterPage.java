@@ -11,7 +11,7 @@ import javax.xml.xpath.XPath;
 
 public class LoginRegisterPage {
     public LoginRegisterPage(){
-        PageFactory.initElements(Driver.getDriver(ConfigurationReader.getProperty("browser")),this);
+        PageFactory.initElements(Driver.getDriver(),this);
 
           }
 
